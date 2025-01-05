@@ -22,10 +22,8 @@ public class QuestionService {
         for(Question q : questions) {
             System.out.println("Question No: "+q.getId());
             System.out.println(q.getQuestion());
-            System.out.println(q.getOpt1());
-            System.out.println(q.getOpt2());
-            System.out.println(q.getOpt3());
-            System.out.println(q.getOpt4());
+            System.out.println("a) "+q.getOpt1()+ " b) "+q.getOpt2());
+            System.out.println("c) "+q.getOpt3()+ " d) "+q.getOpt4());
             actualAnswer[k++] = q.getAnswer();
             System.out.println("Please write your Answer: ");
 
@@ -37,13 +35,14 @@ public class QuestionService {
     public void showAnswer() {
         System.out.println("Below Answer you had selected:");
         for(String i : selection) {
-            System.out.println(i);
+            System.out.print(i);
+            System.out.print(" ");
         }
     }
 
     public void yourScore() {
         int score = 0;
-
+        System.out.println(" ");
         for(int i=0;i<5;i++){
             if(selection[i] != null && selection[i].equals(actualAnswer[i])) {
                 score++;
